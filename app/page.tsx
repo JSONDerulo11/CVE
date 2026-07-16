@@ -1,5 +1,4 @@
-import { CveTable } from "@/components/cve-table";
-import { CveToolbar } from "@/components/cve-toolbar";
+import { CveResults } from "@/components/cve-results";
 import { mapCveReportToFindings } from "@/lib/cve";
 import type { CveApiEntry } from "@/lib/types";
 
@@ -11,8 +10,7 @@ export default async function Home() {
   return (
     <div className="flex flex-1 flex-col items-center justify-center bg-background font-sans text-foreground">
       <main className="w-full max-w-6xl space-y-4 bg-background p-8">
-        <CveToolbar findings={findings} />
-        <CveTable data={findings} />
+        <CveResults findings={findings} />
       </main>
     </div>
   );
