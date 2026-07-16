@@ -4,6 +4,9 @@ export type Severity = (typeof SEVERITIES)[number]
 export const PATCH_STATUSES = ["available", "unavailable"] as const
 export type PatchStatus = (typeof PATCH_STATUSES)[number]
 
+export const SORT_DIRECTIONS = ["desc", "asc"] as const
+export type SortDirection = (typeof SORT_DIRECTIONS)[number]
+
 export interface CveFinding {
   id: string
   cveId: string
