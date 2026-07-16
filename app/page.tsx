@@ -6,6 +6,12 @@ import { Suspense } from "react";
 
 export default async function Home() {
   const data = await fetch("https://dummyjson.com/c/6b25-ad69-4222-b625");
+
+  
+  if(!data.ok) {
+    throw new Error("Failed to fetch CVE report");
+  }
+
   const cveReport: CveApiEntry[] = await data.json();
   const findings = mapCveReportToFindings(cveReport);
 
