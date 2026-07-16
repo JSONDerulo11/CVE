@@ -1,9 +1,7 @@
-import type { CveApiEntry, CveFinding, Severity } from "@/lib/types"
-
-const knownSeverities = new Set<string>(["critical", "high", "medium", "low", "n/a"])
+import { SEVERITIES, type CveApiEntry, type CveFinding, type Severity } from "@/lib/types"
 
 function isSeverity(value: string): value is Severity {
-  return knownSeverities.has(value)
+  return SEVERITIES.some((severity) => severity === value)
 }
 
 function normalizeSeverity(severity: string): Severity {
